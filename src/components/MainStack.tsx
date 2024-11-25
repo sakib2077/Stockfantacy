@@ -10,12 +10,17 @@ import { CompetitionDetails } from "./competitions/CompetitionDetails";
 import { CompetitionPortfolio } from "./competitions/CompetitionPortfolio";
 import { CompetitionMarket } from "./competitions/CompetitionMarket";
 
+// Import authentication screens
+import { SignIn } from "./SignIn";
+import { SignUp } from "./SignUp";
+import { ForgotPassword } from "./ForgotPassword";
+
 const StackNavigator = stackNavigatorFactory();
 
 export const MainStack = () => (
     <BaseNavigationContainer>
         <StackNavigator.Navigator
-            initialRouteName="Portfolio"
+            initialRouteName="SignIn" // Set default screen as SignIn
             screenOptions={{
                 headerStyle: {
                     backgroundColor: "#1a1a1a",
@@ -24,6 +29,24 @@ export const MainStack = () => (
                 headerShown: true,
             }}
         >
+            {/* Authentication Screens */}
+            <StackNavigator.Screen
+                name="SignIn"
+                component={SignIn}
+                options={{ title: "Sign In" }}
+            />
+            <StackNavigator.Screen
+                name="SignUp"
+                component={SignUp}
+                options={{ title: "Sign Up" }}
+            />
+            <StackNavigator.Screen
+                name="ForgotPassword"
+                component={ForgotPassword}
+                options={{ title: "Forgot Password" }}
+            />
+
+            {/* Main App Screens */}
             <StackNavigator.Screen
                 name="Portfolio"
                 component={Portfolio}

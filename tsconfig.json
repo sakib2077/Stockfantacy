@@ -17,5 +17,6 @@
   },
   "include": ["./src/**/*.tsx?"],
   "files": ["./references.d.ts"],
-  "exclude": ["node_modules", "platforms"]
+  "exclude": ["node_modules", "platforms"],
+  "typeRoots": ["./node_modules/@types", "./node_modules/@types/react-native"]
 }
